@@ -1,7 +1,6 @@
 package com.epam.izh.rd.online.repository;
 
 import com.epam.izh.rd.online.entity.SchoolBook;
-import com.sun.istack.internal.NotNull;
 
 import java.util.Arrays;
 
@@ -10,7 +9,7 @@ public class SimpleSchoolBookRepository implements BookRepository<SchoolBook> {
     private SchoolBook[] schoolBooks = {};
 
     @Override
-    public boolean save(@NotNull SchoolBook book) {
+    public boolean save(SchoolBook book) {
         SchoolBook[] newBooks = Arrays.copyOf(schoolBooks, schoolBooks.length + 1);
         newBooks[newBooks.length - 1] = book;
         schoolBooks = newBooks;

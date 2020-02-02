@@ -3,7 +3,6 @@ package com.epam.izh.rd.online.service;
 import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.repository.AuthorRepository;
 import com.epam.izh.rd.online.repository.SimpleAuthorRepository;
-import com.sun.istack.internal.NotNull;
 
 public class SimpleAuthorService implements AuthorService {
 
@@ -18,7 +17,7 @@ public class SimpleAuthorService implements AuthorService {
     }
 
     @Override
-    public boolean save(@NotNull Author author) {
+    public boolean save(Author author) {
         return authorRepository.save(author);
     }
 
@@ -28,7 +27,7 @@ public class SimpleAuthorService implements AuthorService {
     }
 
     @Override
-    public boolean remove(@NotNull Author author) {
+    public boolean remove(Author author) {
         return authorRepository.remove(author);
     }
 

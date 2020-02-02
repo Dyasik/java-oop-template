@@ -4,7 +4,6 @@ import com.epam.izh.rd.online.entity.Author;
 import com.epam.izh.rd.online.entity.SchoolBook;
 import com.epam.izh.rd.online.repository.BookRepository;
 import com.epam.izh.rd.online.repository.SimpleSchoolBookRepository;
-import com.sun.istack.internal.NotNull;
 
 public class SimpleSchoolBookService implements BookService<SchoolBook> {
 
@@ -23,7 +22,7 @@ public class SimpleSchoolBookService implements BookService<SchoolBook> {
     }
 
     @Override
-    public boolean save(@NotNull SchoolBook book) {
+    public boolean save(SchoolBook book) {
         boolean isAuthorSaved = authorService.findByFullName(book.getAuthorName(), book.getAuthorLastName()) != null;
 
         if (!isAuthorSaved) {

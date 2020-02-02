@@ -1,7 +1,6 @@
 package com.epam.izh.rd.online.repository;
 
 import com.epam.izh.rd.online.entity.Author;
-import com.sun.istack.internal.NotNull;
 
 import java.util.Arrays;
 
@@ -10,7 +9,7 @@ public class SimpleAuthorRepository implements AuthorRepository {
     private Author[] authors = {};
 
     @Override
-    public boolean save(@NotNull Author author) {
+    public boolean save(Author author) {
         if (findByFullName(author.getName(), author.getLastName()) != null) {
             return false;
         }
@@ -37,7 +36,7 @@ public class SimpleAuthorRepository implements AuthorRepository {
     }
 
     @Override
-    public boolean remove(@NotNull Author author) {
+    public boolean remove(Author author) {
         if (findByFullName(author.getName(), author.getLastName()) == null) {
             return false;
         }
